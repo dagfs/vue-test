@@ -1,0 +1,27 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="./main.js"></script>
+
+<div id="app">
+    <div v-for="job in jobs">
+        <a :href="job.links['careersite-job-url']">
+
+            <h3>
+                
+                {{job.attributes.title}}
+            </h3>
+            {{job.attributes.pitch}}
+        </a>
+    </div>
+</div>
+
+<script>
+  const { createApp, ref } = Vue
+
+  createApp({
+    setup() {
+      return {
+        jobs: data.data
+      }
+    }
+  }).mount('#app')
+</script>
